@@ -25,7 +25,8 @@
 
 #### WidgetPanel02 / useEcharts
 
-1. 封装 echarts 使用的 hook，监听窗口 resize 事件。这里还可以用 echarts-react 库
+1. 封装 echarts 使用的 hook，监听窗口 resize 事件。这里还可以用
+   echarts-for-react 库
 
 #### Widgetpanel06
 
