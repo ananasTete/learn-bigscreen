@@ -51,7 +51,7 @@ onMounted(() => {
     setTimeout(() => {
       if (!timer) return void 0
       container.value.classList.remove('scroll')
-      list.value.push(list.value.shift())
+      list.value.push(list.value.shift()) // 两秒后停止滚动并把第一个放到最后一个
     }, 2000)
   }, 3000)
 })
@@ -75,14 +75,12 @@ onMounted(() => {
   flex-direction: column;
   grid-gap: 8px;
   height: 670px;
-
-  // overflow: hidden;
   &.scroll {
     position: relative;
-    animation: row-out 1s linear forwards;
-    .row:first-child {
+    animation: row-out 2s linear forwards; // 向上滚动动画，2s执行完毕
+    .item:first-child {
       opacity: 0;
-      transition: opacity 1s;
+      transition: opacity 2s; // 2s 内变为透明的过渡
     }
   }
   .item {

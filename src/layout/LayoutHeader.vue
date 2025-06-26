@@ -80,20 +80,19 @@ onUnmounted(() => {
   height: 80px;
   background-image: url(@/assets/images/title_bg.png);
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 100%;
+  background-size: 100% 100%; // 尺寸：宽 高；双 100% 就是铺满容器但不裁剪。
   &::after {
+    // 使用伪元素设置闪光特效
     position: absolute;
     bottom: -55px;
     left: 500px;
-    width: 100%;
     width: 500px;
     height: 100px;
     content: '';
     background-image: url(@/assets/images/light_bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    animation: light-go 3s ease-in-out infinite forwards;
+    background-size: contain; // 适应伪元素的宽高
+    animation: light-go 3s ease-in-out infinite forwards; // 自定义滑动动画
   }
   .header-midden {
     position: relative;
@@ -125,6 +124,7 @@ onUnmounted(() => {
     font-size: 18px;
     color: #fff;
     .message {
+      // 元素本身不设置内容，而是使用伪元素实现滚动动画
       display: flex;
       width: 400px;
       overflow: hidden;
@@ -132,7 +132,10 @@ onUnmounted(() => {
       &::after {
         width: auto;
         text-wrap: nowrap;
-        content: attr(content);
+        content: attr(
+          content
+        ); // 读取 content 属性的值，为什么不将内容直接设置到这里的 content 而是写到外面？
+
         animation: text-roll 20s linear infinite;
         @include font-color;
       }
@@ -153,6 +156,7 @@ onUnmounted(() => {
       text-shadow: 0 3px 2px #84a8f663;
       @include font-color;
       &:not(:last-child)::after {
+        // 使用选择器为最后一个元素之前的元素设置伪元素间隔符
         position: absolute;
         right: -10px;
         width: 2px;

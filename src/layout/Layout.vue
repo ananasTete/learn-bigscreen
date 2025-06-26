@@ -41,7 +41,7 @@ const props = defineProps<PropsType>()
     width: 100%;
     height: calc(100% - 80px);
     background-color: #05326a;
-    background-image: url(@/assets/images/grid_bg_01.png);
+    background-image: url(@/assets/images/grid_bg_01.png); // 设置全局背景图片，网格是 repeat 出来的
     background-repeat: repeat;
     .main-left {
       position: absolute;

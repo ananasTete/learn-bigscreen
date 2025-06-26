@@ -19,7 +19,7 @@ const props = defineProps<PropsType>()
   position: relative;
   height: 100%;
   color: #fff;
-  background-image: url('@/assets/images/panel_body_bg.png');
+  background-image: url('@/assets/images/panel_body_bg.png'); // 图表容器的背景图片
   background-repeat: no-repeat;
   background-size: 100% 100%;
   .panel-header {
@@ -31,7 +31,7 @@ const props = defineProps<PropsType>()
     background-repeat: no-repeat;
     background-size: 100% 100%;
     .panel-header-title {
-      position: relative;
+      position: relative; // 相对于自身位置进行定位
       top: -12px;
       left: 70px;
       font-size: 15px;
@@ -39,8 +39,6 @@ const props = defineProps<PropsType>()
   }
   .panel-body {
     box-sizing: border-box;
-
-    // height: 220px;
     height: calc(100% - 65px);
     padding: 0 10px 10px;
     overflow: hidden;
